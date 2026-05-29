@@ -12,7 +12,7 @@ function App() {
   const savedSalary = localStorage.getItem("mySalary");
   const [salary, setSalary] = useState(savedSalary ? Number(savedSalary) : 0);
 
-  // Get old transactions from local storage or start with empty array []
+  // Get old transactions from local storage or start with empty array
 
   const savedList = localStorage.getItem("myList");
   const [transactions, setTransactions] = useState(
@@ -47,7 +47,7 @@ function App() {
 
     //  reset function  Make everything zero and empty
   };
-  //  delet function Keep all items except the one with the matching ID
+  //  delet function Keep all items except the one with the matching id
   const deleteTransaction = (id) => {
     const newList = transactions.filter((item) => item.id !== id);
     setTransactions(newList);
@@ -58,7 +58,6 @@ function App() {
     localStorage.clear(); // Clear browser memory
   };
   return (
-    // min-h-screen poori height lega, aur max-w-3xl sabko center mein neatly lock karega
     <div className="max-h-screen max-w-full flex justify-center items-start sm:items-center overflow-y-auto  ">
       <div className="w-full max-w-full bg-white sm:border  border-gray-300  shadow-none sm:drop-shadow-2xl p-6 sm:p-10 flex flex-col gap-8 min-h-screen sm:min-h-fit rounded-2xl">
         <Header />
